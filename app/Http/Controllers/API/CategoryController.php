@@ -103,4 +103,21 @@ class CategoryController extends Controller
         }
     }
 
+    public function destroy($id){
+        $category = Category::find($id);
+        if($category){
+            $category->delete();
+            return response()->json([
+                'status' => 200,
+                'message' => 'Category deleted successfully',
+            ]);
+        }
+        else{
+            return response()->json([
+                'status' => 404,
+                'message' => 'No Category found with this id',
+            ]);
+        }
+    }
+
 }

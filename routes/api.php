@@ -22,6 +22,7 @@ Route::middleware(['auth:sanctum', 'isAPIAdmin'])->group(function () {
     Route::get('all_category', [CategoryController::class, 'allCategory']);
 
     Route::post('store_product', [ProductController::class, 'store']);
+    Route::get('view_product', [ProductController::class, 'index']);
 
 
 });
